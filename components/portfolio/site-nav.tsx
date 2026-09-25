@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { GitHubIcon, LinkedInIcon, LINKS, external } from './shared'
+import { GitHubIcon, HuggingFaceIcon, LinkedInIcon, LINKS, external } from './shared'
 
 const NAV = [
   { href: '#about', label: 'About' },
@@ -50,6 +50,14 @@ export function SiteNav() {
             className="flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
             <GitHubIcon className="size-5" />
+          </a>
+          <a
+            href={LINKS.huggingface}
+            {...external}
+            aria-label="Hugging Face profile (opens in a new tab)"
+            className="flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          >
+            <HuggingFaceIcon className="size-5" />
           </a>
           <a
             href={LINKS.linkedin}

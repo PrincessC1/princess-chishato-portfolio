@@ -6,9 +6,32 @@ export const LINKS = {
   linkedin: 'https://www.linkedin.com/in/princess-chishato-7b6368183',
   email: 'mailto:rumbidzaikc@gmail.com',
   voicebot: 'https://github.com/PrincessC1/patient-voicebot',
+  huggingface: 'https://huggingface.co/Pchishy',
+  newsClassifier: 'https://huggingface.co/spaces/Pchishy/ag-news-classifier',
 }
 
 export const external = { target: '_blank', rel: 'noopener noreferrer' } as const
+
+export function HuggingFaceIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <circle cx="12" cy="11.5" r="8.75" />
+      <circle cx="8.75" cy="9.5" r="1" fill="currentColor" stroke="none" />
+      <circle cx="15.25" cy="9.5" r="1" fill="currentColor" stroke="none" />
+      <path d="M8.25 13.5c.9 1.6 2.2 2.4 3.75 2.4s2.85-.8 3.75-2.4" />
+      <path d="M4.2 16.2c-.9.6-1.6 1.6-1.4 2.7.3 1.3 1.9 1.6 3.2 1.1M19.8 16.2c.9.6 1.6 1.6 1.4 2.7-.3 1.3-1.9 1.6-3.2 1.1" />
+    </svg>
+  )
+}
 
 export function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   return (
