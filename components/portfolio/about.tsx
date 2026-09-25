@@ -1,12 +1,13 @@
 import { Database, HeartHandshake } from 'lucide-react'
+import { CountUp } from './count-up'
 import { Reveal } from './reveal'
 import { SectionHeading } from './shared'
 
 const STATS = [
-  { value: '5', label: 'Years of frontline human services' },
-  { value: '10', label: 'Automated AI test calls designed and executed' },
-  { value: '12', label: 'Bugs documented in a healthcare AI agent' },
-  { value: '2', label: 'Degrees across analytics and community development' },
+  { value: 5, suffix: '', label: 'Years of frontline human services' },
+  { value: 10, suffix: '', label: 'Automated AI test calls designed and executed' },
+  { value: 12, suffix: '', label: 'Bugs documented in a healthcare AI agent' },
+  { value: 33, suffix: 'M+', label: 'Transaction records processed with PySpark' },
 ]
 
 function WorldCard({
@@ -48,8 +49,9 @@ export function About() {
           <div className="grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-0">
             <WorldCard icon={<HeartHandshake className="size-5" aria-hidden="true" />} eyebrow="World one" title="The Field">
               <p>
-                Five years in Zimbabwe supporting vulnerable women, children, and youth through shelter
-                operations, rehabilitation settings, and community programs.
+                Five years in Zimbabwe supporting vulnerable women, children, and youth: survivors of
+                gender-based violence, young women in shelters, and communities reached through public
+                education on sexual harassment.
               </p>
               <p className="mt-3 font-mono text-xs text-foreground/80">B.S. in Community Development</p>
             </WorldCard>
@@ -62,10 +64,10 @@ export function About() {
 
             <WorldCard icon={<Database className="size-5" aria-hidden="true" />} eyebrow="World two" title="The Data">
               <p>
-                M.S. in Analytics, with hands-on work in Python, SQL, machine learning, API deployment,
+                Master of Professional Studies in Analytics, with hands-on work in Python, SQL, machine learning, API deployment,
                 and AI agent testing.
               </p>
-              <p className="mt-3 font-mono text-xs text-foreground/80">M.S. in Analytics</p>
+              <p className="mt-3 font-mono text-xs text-foreground/80">M.P.S. in Analytics</p>
             </WorldCard>
           </div>
           <p className="mt-8 text-center font-mono text-sm text-pretty text-muted-foreground">
@@ -80,7 +82,7 @@ export function About() {
               <div key={stat.label} className="card-glow flex flex-col rounded-xl border border-border bg-card p-5">
                 <dt className="order-2 mt-2 text-sm leading-snug text-muted-foreground">{stat.label}</dt>
                 <dd className="order-1 font-mono text-4xl font-semibold tracking-tight text-highlight md:text-5xl">
-                  {stat.value}
+                  <CountUp value={stat.value} suffix={stat.suffix} />
                 </dd>
               </div>
             ))}

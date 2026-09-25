@@ -48,7 +48,7 @@ export function Hero() {
 
         <Reveal delay={240}>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-pretty text-muted-foreground md:text-xl">
-            M.S. in Analytics from Northeastern University with five years of frontline human services
+            Master of Professional Studies in Analytics from Northeastern University with five years of frontline human services
             experience. I build data tools and AI systems, and I never forget the people they are meant
             to serve.
           </p>

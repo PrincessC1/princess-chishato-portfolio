@@ -3,20 +3,66 @@ import { Reveal } from './reveal'
 import { SectionHeading, TagList } from './shared'
 
 const EDUCATION = [
-  { school: 'Northeastern University', degree: 'M.S. in Analytics' },
-  { school: "Women's University in Africa", degree: 'B.S. in Community Development' },
+  {
+    school: 'Northeastern University',
+    degree: 'Master of Professional Studies in Analytics',
+    dates: 'Jan 2025 to Apr 2026',
+  },
+  {
+    school: "Women's University in Africa",
+    degree: 'B.S. in Community Development Studies',
+    dates: 'Aug 2017 to Jun 2021',
+  },
 ]
 
 const SKILLS = [
-  { group: 'Languages', items: ['Python', 'SQL'] },
+  { group: 'Languages', items: ['Python', 'R', 'SQL', 'PySpark'] },
   {
     group: 'Data & AI',
-    items: ['Data analysis', 'Machine learning', 'Model deployment', 'AI agent evaluation', 'Data visualization'],
+    items: [
+      'Data analysis',
+      'Statistical analysis',
+      'Machine learning',
+      'Feature engineering',
+      'NLP',
+      'Transfer learning',
+      'XGBoost',
+      'Clustering',
+      'Model deployment',
+      'AI agent evaluation',
+      'Data visualization',
+    ],
   },
-  { group: 'Tools', items: ['Flask', 'FastAPI', 'Docker', 'Git', 'Twilio'] },
+  {
+    group: 'Tools',
+    items: [
+      'Flask',
+      'FastAPI',
+      'Docker',
+      'Git',
+      'Twilio',
+      'Tableau',
+      'Power BI',
+      'Qlik',
+      'Apache Spark',
+      'Databricks',
+      'Hugging Face',
+      'Jupyter',
+      'Excel',
+    ],
+  },
   {
     group: 'Human Services',
-    items: ['Trauma-informed care', 'Harm reduction', 'De-escalation', 'Case documentation', 'Program coordination'],
+    items: [
+      'Trauma-informed care',
+      'Harm reduction',
+      'De-escalation',
+      'Case documentation',
+      'Program coordination',
+      'Gender-based violence survivor support',
+      'Shelter support for young women and youth',
+      'Public education on sexual harassment',
+    ],
   },
 ]
 
@@ -36,6 +82,7 @@ export function Education() {
               <div>
                 <h3 className="text-xl font-semibold tracking-tight">{edu.school}</h3>
                 <p className="mt-1 font-mono text-sm text-highlight">{edu.degree}</p>
+                <p className="mt-2 font-mono text-xs text-muted-foreground">{edu.dates}</p>
               </div>
             </article>
           </Reveal>

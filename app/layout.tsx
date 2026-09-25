@@ -9,7 +9,7 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 export const metadata: Metadata = {
   title: 'Princess Chishato | Data Analyst, AI Evaluation & Human Services',
   description:
-    'Princess Chishato is a Boston-based data analyst with an M.S. in Analytics from Northeastern University and five years of frontline human services experience. Data with a human face.',
+    'Princess Chishato is a Boston-based data analyst with a Master of Professional Studies in Analytics from Northeastern University and five years of frontline human services experience. Data with a human face.',
   generator: 'v0.app',
   icons: {
     icon: [
