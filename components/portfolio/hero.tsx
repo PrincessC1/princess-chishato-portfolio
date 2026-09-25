@@ -23,12 +23,18 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h1
-            id="hero-name"
-            className="mt-8 text-5xl leading-[0.95] font-semibold tracking-tighter text-balance sm:text-7xl md:text-8xl"
-          >
-            Princess <span className="text-muted-foreground/60">Chishato</span>
-          </h1>
+          <div className="relative isolate mt-8 w-fit">
+            <div
+              className="pointer-events-none absolute top-1/2 left-[40%] -z-10 h-[140%] w-[110%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl"
+              aria-hidden="true"
+            />
+            <h1
+              id="hero-name"
+              className="text-5xl leading-[0.95] font-semibold tracking-tighter text-balance sm:text-7xl md:text-8xl"
+            >
+              Princess <span className="text-muted-foreground/60">Chishato</span>
+            </h1>
+          </div>
         </Reveal>
 
         <Reveal delay={160}>
