@@ -1,11 +1,12 @@
 import { ArrowUpRight, Mail } from 'lucide-react'
 import { Reveal } from './reveal'
-import { GitHubIcon, LinkedInIcon, LINKS, external } from './shared'
+import { GitHubIcon, HuggingFaceIcon, LinkedInIcon, LINKS, external } from './shared'
 
 const CHANNELS = [
   { label: 'Email', value: 'rumbidzaikc@gmail.com', href: LINKS.email, icon: Mail },
   { label: 'LinkedIn', value: 'princess-chishato', href: LINKS.linkedin, icon: LinkedInIcon },
   { label: 'GitHub', value: 'PrincessC1', href: LINKS.github, icon: GitHubIcon },
+  { label: 'Hugging Face', value: 'Pchishy', href: LINKS.huggingface, icon: HuggingFaceIcon },
 ]
 
 export function Contact() {
@@ -29,7 +30,7 @@ export function Contact() {
         </p>
       </Reveal>
 
-      <ul className="mt-14 grid gap-4 md:grid-cols-3">
+      <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {CHANNELS.map((c, i) => {
           const Icon = c.icon
           return (

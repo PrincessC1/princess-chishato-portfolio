@@ -1,6 +1,6 @@
 import { ArrowUpRight, ShieldAlert } from 'lucide-react'
 import { Reveal } from './reveal'
-import { BulletList, GitHubIcon, LINKS, SectionHeading, TagList, external } from './shared'
+import { BulletList, GitHubIcon, HuggingFaceIcon, LINKS, SectionHeading, TagList, external } from './shared'
 
 const METRICS = ['10 calls', '12 bugs', '3 debugging iterations']
 
@@ -8,8 +8,10 @@ type Project = {
   title: string
   dates: string
   summary: string
+  bullets?: string[]
   badges?: string[]
   tags: string[]
+  link?: { href: string; label: string }
 }
 
 const PROJECTS: Project[] = [
@@ -18,7 +20,12 @@ const PROJECTS: Project[] = [
     dates: 'Nov 2025 to Dec 2025',
     summary:
       'Flask REST API for real-time text classification using TF-IDF and Logistic Regression, containerized with Docker and deployed on Hugging Face Spaces.',
+    bullets: [
+      "Benchmarked against Google Cloud Natural Language API: my model scored 91.45% vs. Google's 53.50% on AG News, at lower cost and latency.",
+    ],
+    badges: ['91.45% accuracy', '+38 pts vs Google Cloud'],
     tags: ['Python', 'NLP', 'Flask', 'Docker', 'Hugging Face'],
+    link: { href: LINKS.newsClassifier, label: 'Live API' },
   },
   {
     title: 'NYC Motor Vehicle Collision Analysis',
@@ -61,6 +68,11 @@ function ProjectCard({ project }: { project: Project }) {
       <h3 className="mt-3 text-2xl font-semibold tracking-tight text-balance">{project.title}</h3>
       <p className="mt-2 font-mono text-sm text-primary">{project.dates}</p>
       <p className="mt-5 leading-relaxed text-pretty text-muted-foreground">{project.summary}</p>
+      {project.bullets && (
+        <div className="mt-5">
+          <BulletList items={project.bullets} />
+        </div>
+      )}
       {project.badges && (
         <ul className="mt-6 flex flex-wrap gap-2" aria-label="Project metrics">
           {project.badges.map((b) => (
@@ -75,6 +87,21 @@ function ProjectCard({ project }: { project: Project }) {
       )}
       <div className="mt-auto pt-8">
         <TagList label="Technologies" tags={project.tags} />
+        {project.link && (
+          <a
+            href={project.link.href}
+            {...external}
+            className="group mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_28px_-6px] hover:shadow-primary/60"
+          >
+            <HuggingFaceIcon className="size-4" />
+            {project.link.label}
+            <ArrowUpRight
+              className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+            <span className="sr-only">(opens in a new tab)</span>
+          </a>
+        )}
       </div>
     </article>
   )
